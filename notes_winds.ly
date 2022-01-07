@@ -23,17 +23,17 @@ fluteInotes =  \relative d''' {
   d4 ) r4 r2 | % 33
   R1 | % 34
   R1*5 | % 39
-  r4  b2 r4 | \barNumberCheck #40
-  r4  b2 r4 | % 41
+  r4 b2 -\tag #'score ^\markup{"(1.)"} r4 | \barNumberCheck #40
+  r4 b2 r4 | % 41
   R1*3 | % 44
   R1*2 | % 46
   b2 (  a2 | % 47
   g4 ) r4 r2 | % 48
   R1*4 | % 52
   R1*4 | % 56
-  r4  a4 (  cis4  d4 ) | % 57
+  r4  a4 -\tag #'score ^\markup{"(1.)"} (  cis4  d4 ) | % 57
   R1 | % 58
-  a4. (   b8  cis2 | % 59
+  a4. -\tag #'score ^\markup{"(1.)"} (   b8  cis2 | % 59
   d4 ) r4 r4  a'8 ( gis8 )  |
   \barNumberCheck #60
   g8 (   a8
@@ -207,7 +207,7 @@ oboeInotes =  \relative d'' {
   d4 ) r4 r2 | % 64
   cis'2 (  d4.  cis8 ) | % 65
   cis2 r4  cis4 | % 66
-  cis4  cis4 \grace {  e8 ( }  d8 )
+  cis4 -\tag #'score ^\markup{"(1.)"} cis4 \grace {  e8 ( }  d8 )
   (   cis8  d8  fis8 )  | % 67
   cis2.  cis4 | % 68
   cis4 (  b'2  a4 ) | % 69
@@ -605,7 +605,7 @@ bassoonInotes =  \relative d' {
   a4 r4 r2 | % 71
   R1 | % 72
   fis,4  cis'4  fis4 r4 | % 73
-  e,4 cis'4  g'4 r4 | % 74
+  e,4 -\tag #'score ^\markup{"(1.)"} cis'4  g'4 r4 | % 74
   R1*4 | % 78
   fis8   fis8  gis8  ais8
   b8   cis8  d8  e8  | % 79
@@ -729,7 +729,7 @@ bassoonIInotes =  \relative fis {
   R1 | % 119
   r2  g8 (  \f  fis8  e8  d8  |
   \barNumberCheck #120
-  cis4 ) r4  d8 (   cis8  b8  a8
+  cis4 ) -\tag #'score ^\markup{"(a2)"} r4  d8 (   cis8  b8  a8
   | % 121
   g4 ) r4  g'8 (   fis8  e8
   d8  | % 122
