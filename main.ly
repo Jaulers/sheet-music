@@ -51,6 +51,9 @@ global = {
   }
 }
 \paper {
+  two-sided = ##t
+  inner-margin = 10
+  outer-margin = 10
   ragged-last-bottom = ##f
   markup-system-spacing.padding = #4
   top-markup-spacing.padding = #3
@@ -84,25 +87,25 @@ global = {
       <<
         \new Staff \with {
           instrumentName = "Flute 1,2"
-          shortInstrumentName = "Fl. 1,2"
+          shortInstrumentName = \markup{"Fl. " \raise #1.5 \center-column{"1" "2"}}
         }{
           \partCombine \keepWithTag #'score \fluteInotes \keepWithTag #'score \fluteIInotes
         }
         \new Staff \with {
           instrumentName = "Oboe 1,2"
-          shortInstrumentName = "Ob. 1,2"
+          shortInstrumentName = \markup{"Ob. " \raise #1.5 \center-column{"1" "2"}}
         }{
           \partCombine \keepWithTag #'score \oboeInotes \keepWithTag #'score \oboeIInotes
         }
         \new Staff \with {
-          instrumentName = \markup{\center-column{"Clarinet" \line{"in A"}}}
-          shortInstrumentName = \markup{\center-column{"Cl." \line{"in A"}}}
+          instrumentName = \markup{\center-column{"Clarinet 2" "in A"}}
+          shortInstrumentName = \markup{\raise #1.5 \center-column{"Cl." "in A"} "2"}
         }{
           \keepWithTag #'score \transpose a, c \clarinetIInotes
         }
         \new Staff \with {
           instrumentName = "Bassoon 1,2"
-          shortInstrumentName = "Bn. 1,2"
+          shortInstrumentName = \markup{"Bsn. " \raise #1.5 \center-column{"1" "2"}}
         }{
           \partCombine \keepWithTag #'score \bassoonInotes \keepWithTag #'score \bassoonIInotes
         }
@@ -111,14 +114,14 @@ global = {
       \new StaffGroup
       <<
         \new Staff \with {
-          instrumentName = \markup{\center-column{"Horn 1,2" \line{"in D"}}}
-          shortInstrumentName = \markup{\center-column{"Hn. 1,2" \line{"in D"}}}
+          instrumentName = \markup{\center-column{"Horn 1,2" \line{"in D"}} }
+          shortInstrumentName = \markup{\center-column{"Hn." "in D"} \center-column{"1" "2"}}
         }{
           \partCombine \keepWithTag #'score \transpose d c \hornInotes \keepWithTag #'score \transpose d c \hornIInotes
         }
         \new Staff \with {
-          instrumentName = \markup{\center-column{"Trumpet 1,2" \line{"in D"}}}
-          shortInstrumentName = \markup{\center-column{"Tpt. 1,2" \line{"in D"}}}
+          instrumentName = \markup{\center-column{"Trumpet 1,2" "in D"}}
+          shortInstrumentName = \markup{\center-column{"Tpt." "in D"}  \center-column{"1" "2"}}
         }{
           \partCombine \keepWithTag #'score \transpose d c \trumpetInotes \keepWithTag #'score \transpose d c \trumpetIInotes
         }
@@ -140,19 +143,19 @@ global = {
       \new StaffGroup <<
         \new Staff \with {
           instrumentName = "Violin 1"
-          shortInstrumentName = "Vn. 1"
+          shortInstrumentName = "Vln. 1"
         }{
           \keepWithTag #'score \violinInotes
         }
         \new Staff \with {
           instrumentName = "Violin 2"
-          shortInstrumentName = "Vn. 2"
+          shortInstrumentName = "Vln. 2"
         }{
           \keepWithTag #'score \violinIInotes
         }
         \new Staff \with {
           instrumentName = "Viola"
-          shortInstrumentName = "Va."
+          shortInstrumentName = "Vla."
         }{
          \keepWithTag #'score  \violaNotes
         }
@@ -163,8 +166,8 @@ global = {
           \keepWithTag #'score \celliNotes
         }
         \new Staff \with {
-          instrumentName = "Contrabass"
-          shortInstrumentName = "Cb."
+          instrumentName = "Double Bass"
+          shortInstrumentName = "D.B."
         }{
           \keepWithTag #'score \bassiNotes
         }
@@ -230,6 +233,10 @@ global = {
   \header {
     instrument = "Solo Clarinet in A"
   }
+  \paper { 
+    first-page-number = #2
+    print-page-number = ##f
+  }
   \score {
     \new Staff <<
       \global
@@ -241,7 +248,7 @@ global = {
 \book {
   \bookOutputName "03b_clarinet2"
   \header {
-    instrument = "2. Clarinet in A"
+    instrument = "Clarinet 2 in A"
   }
   \paper {
     ragged-last-bottom = ##t
@@ -256,7 +263,7 @@ global = {
 \book {
   \bookOutputName "03b_clarinet2_transposed"
   \header {
-    instrument = "2. Clarinet in Bb"
+    instrument = "Clarinet 2 in Bb"
   }
   \paper {
     ragged-last-bottom = ##t
@@ -399,6 +406,10 @@ global = {
   \header {
     instrument = "Violin 1"
   }
+  \paper { 
+    first-page-number = #2
+    print-page-number = ##f
+  }
   \score {
     \new Staff <<
       \global
@@ -410,6 +421,10 @@ global = {
   \bookOutputName "09_violin2"
   \header {
     instrument = "Violin 2"
+  }
+  \paper { 
+    first-page-number = #2
+    print-page-number = ##f
   }
   \score {
     \new Staff <<
@@ -423,6 +438,10 @@ global = {
   \header {
     instrument = "Viola"
   }
+  \paper { 
+    first-page-number = #2
+    print-page-number = ##f
+  }
   \score {
     \new Staff <<
       \global
@@ -435,6 +454,10 @@ global = {
   \header {
     instrument = "Violoncello"
   }
+  \paper { 
+    first-page-number = #2
+    print-page-number = ##f
+  }
   \score {
     \new Staff <<
       \global
@@ -446,6 +469,10 @@ global = {
   \bookOutputName "12_bassi"
   \header {
     instrument = "Contrabass"
+  }
+  \paper {
+    first-page-number = #2
+    print-page-number = ##f
   }
   \score {
     \new Staff <<
