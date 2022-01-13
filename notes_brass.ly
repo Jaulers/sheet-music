@@ -261,7 +261,8 @@ trumpetIInotes = \transpose c d \relative e' {
 
 timpaniNotes = \relative d {
   \clef "bass" \time 4/4 \key c \major | % 1
-  R1*76\tag #'part {^"in D & A"}
+  \tag #'part {\mark "in D & A"}
+  R1*76
   \tag #'part {<>-\markup \tiny "Vl. 1" \cueDuringWithClef "vl1" #UP "treble" {R1*3}}
   \tag #'score R1*3
   | \barNumberCheck #80
