@@ -37,7 +37,7 @@ global = {
   title =  "Andante for Clarinet and Orchestra"
   composer =  "Alice Mary Smith"
   tagline = ##f
-  copyright = \markup{\center-column{"© 2022 Joel Schmitz, based on manuscript available at Royal Academy of Music" "Published under CC BY-SA 4.0 Licence"}}
+  copyright = \markup{\center-column{"© 2022 Universitätsorchester Polyphonia Zürich, based on manuscript available at Royal Academy of Music" "Published under CC BY-SA 4.0 Licence"}}
 }
 
 \layout {
