@@ -10,12 +10,18 @@
   copyright = \markup{\center-column{"© 2022 Universitätsorchester Polyphonia Zürich" "Published under CC BY-SA 4.0 Licence, based on the autograph available at Austrian National Library"}}
 }
 
+#(define-public (bracket-stencils grob)
+  (let ((lp (grob-interpret-markup grob (markup #:fontsize 3.5 #:translate (cons -0.8 -1.0) "[")))
+        (rp (grob-interpret-markup grob (markup #:fontsize 3.5 #:translate (cons 0.0 -1.0) "]"))))
+    (list lp rp)))
+
 \layout {
   \context {
     \Score
     markFormatter = #format-mark-box-letters
     \override ParenthesesItem.font-size = #0
     \override ParenthesesItem.padding = #0.3
+    \override ParenthesesItem.stencils = #bracket-stencils
     
     quotedCueEventTypes = #'(note-event rest-event tie-event beam-event tuplet-span-event slur-event trill-span-event)
   }
@@ -44,10 +50,10 @@
         aDueText = #"a2"
         \RemoveEmptyStaves
       }
-%      \context {
-%        \StaffGroup
-%        \consists "Keep_alive_together_engraver"
-%      }
+%    	\context {
+%    	  \StaffGroup
+%    	  \consists "Keep_alive_together_engraver"
+%    	}
     }
     <<
       \new Staff \with { \RemoveAllEmptyStaves }{
@@ -71,13 +77,17 @@
           instrumentName = "Cor Anglais 1,2"
           shortInstrumentName = \markup{"C.A." \raise #1.5 \center-column{"1" "2"}}
         }{
-          \partCombine \keepWithTag #'score \transpose c c \englishhornInotes \keepWithTag #'score \transpose c c \englishhornIInotes
+          \partCombine {
+            \transposition f \keepWithTag #'score \transpose f, c \englishhornInotes } {
+            \transposition f \keepWithTag #'score \transpose f, c \englishhornIInotes }
         }
         \new Staff \with {
           instrumentName = \markup{\center-column{"Clarinet 1,2" "in B"}}
           shortInstrumentName = \markup{\center-column{"Cl." "in B"}  \center-column{"1" "2"}}
         }{
-         \partCombine \keepWithTag #'score \transpose c c \clarinetInotes \keepWithTag #'score \transpose c c \clarinetIInotes
+         \partCombine {
+           \transposition bes \keepWithTag #'score \transpose bes, c \clarinetInotes } {
+           \transposition bes \keepWithTag #'score \transpose bes, c \clarinetIInotes }
         }
         \new Staff \with {
           instrumentName = "Bassoon 1,2"
@@ -93,13 +103,17 @@
           instrumentName = \markup{\center-column{"Horn 1,2" \line{"in F"}} }
           shortInstrumentName = \markup{\center-column{"Hn." "in F"} \center-column{"1" "2"}}
         }{
-          \partCombine \keepWithTag #'score \transpose c c \hornInotes \keepWithTag #'score \transpose c c \hornIInotes
+          \partCombine {
+            \transposition f \keepWithTag #'score \transpose f, c \hornInotes } {
+            \transposition f \keepWithTag #'score \transpose f, c \hornIInotes }
         }
         \new Staff \with {
           instrumentName = \markup{\center-column{"Trompete 1,2" "in B"}}
           shortInstrumentName = \markup{\center-column{"Tpt." "in B"}  \center-column{"1" "2"}}
         }{
-          \partCombine \keepWithTag #'score \transpose c c \trumpetInotes \keepWithTag #'score \transpose c c \trumpetIInotes
+          \partCombine {
+            \transposition bes \keepWithTag #'score \transpose bes, c \trumpetInotes } {
+            \transposition bes \keepWithTag #'score \transpose bes, c \trumpetIInotes }
         }
       >>
     
