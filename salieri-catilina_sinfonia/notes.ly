@@ -13,7 +13,6 @@ global = {
   s1*40
 }
 
-
 fluteInotes =  \relative gis'' {
   \clef "treble" \time 4/4 \key f \major | % 1
   R1*4 | % 5
@@ -32,7 +31,7 @@ fluteInotes =  \relative gis'' {
   cis2 \sf \sf  d2 \sf \sf | % 21
   cis4  cis4  cis4 r4 | % 22
   R1*2 | % 24
-  e,,4  bes''2  bes4 | % 25
+  e,,4 bes''2  bes4 | % 25
   bes1 | % 26
   a4  a2  a4 | % 27
   a1 | % 28
@@ -141,8 +140,8 @@ fluteIInotes =  \relative d'' {
   g1 | % 16
   f1 | % 17
   R1*2 | % 19
-  e2  f2 | \barNumberCheck #20
-  e2  f2 | % 21
+  e2 \sf  f2 \sf | \barNumberCheck #20
+  e2 \sf f2 \sf | % 21
   e4  e4  e4 r4 | % 22
   R1*2 | % 24
   e,4  e'2  e4 | % 25
@@ -156,7 +155,7 @@ fluteIInotes =  \relative d'' {
   f8.   f,16   f8.   f16
   f8.   f16   f8.   f16  | % 32
   e4..  e'16  e4..  g,16 | % 33
-  g1 \bar "||"
+  g1 \fermata \bar "||"
   R1*17 \bar "||"
   \key es \major R1*5 | % 56
   c1 ~ | % 57
@@ -171,7 +170,7 @@ fluteIInotes =  \relative d'' {
   bes4 r4 r2 | % 65
   \partCombineAutomatic
   R1*3 | % 68
-  r4  des2  des4 | % 69
+  r4  des2 \parenthesize \ff des4 | % 69
   des1 | \barNumberCheck #70
   d1 ~ | % 71
   d1 | % 72
@@ -258,11 +257,11 @@ oboeInotes =  \relative f'' {
   e2 \sf  f2 \sf | \barNumberCheck #20
   e2 \sf  f2 \sf | % 21
   e4  e4  e4 r4 | % 22
-  r2  f2 ~   | % 23
-  f16   e16  d16  cis16
-  d8   c8   bes8   a8  g8
-  f8  | % 24
-  e4  bes''2  bes4 | % 25
+  r2  f2 ~ (  | % 23
+  f16   e16  d16  cis16 )
+  d8   c8   bes8-.   a8-.  g8-.
+  f8-.  | % 24
+  e4 bes''2  bes4 | % 25
   bes1 | % 26
   a4  a2  a4 | % 27
   a1 | % 28
@@ -383,13 +382,13 @@ oboeIInotes =  \relative f'' {
   f1 | % 17
   a,4  a2  a4 ~ | % 18
   a4  a2  a4 | % 19
-  cis2  d2 | \barNumberCheck #20
-  cis2  d2 | % 21
+  cis2 \sf d2 \sf | \barNumberCheck #20
+  cis2 \sf d2 \sf | % 21
   cis4  cis4  cis4 r4 | % 22
-  r2  f2  ~| % 23
-  f16 e16  d16  cis16
-  d8   c8   bes8   a8  g8
-  f8  | % 24
+  r2  f2 ~ (  | % 23
+  f16   e16  d16  cis16 )
+  d8   c8   bes8-.   a8-.  g8-.
+  f8-.  | % 24
   e4  e'2  e4 | % 25
   e1 | % 26
   f4  f2  f4 | % 27
@@ -442,7 +441,7 @@ oboeIInotes =  \relative f'' {
   d4 r4  b4 r4 | % 96
   ais4 r4  ais4 r4 | % 97
   ais4 r4  ais4 r4 | % 98
-  d2  d4.  d8 | % 99
+  d2 \ff d4.  d8 | % 99
   d4  d4  d4  d4 |
   \barNumberCheck #100
   d4  fis,2  fis8.   fis16  | % 101
@@ -485,7 +484,7 @@ oboeIInotes =  \relative f'' {
 
 clarinetInotes =  \transpose c bes, \relative g' {
   \clef "treble" \time 4/4 \key g \major | % 1
-  r2  g2 ~ \parenthesize \ff ( | % 2
+  r2  g'2 ~ \parenthesize \ff ( | % 2
   g16  fis16  e16  dis16 ) e8
   d8   c8   b8  a8  g8  | % 3
   fis2 (  c'2 ) | % 4
@@ -509,9 +508,10 @@ clarinetInotes =  \transpose c bes, \relative g' {
   fis2 \sf  g2 \sf | \barNumberCheck #20
   fis2 \sf  g2 \sf | % 21
   fis4  fis4  fis4 r4 | % 22
-  r2  g2 ~  | % 23
-  g16   fis16  e16  dis16   e8
-  d8   c8   b8  a8  g8  | % 24
+  r2  g2 ~ (  | % 23
+  g16   fis16  e16  dis16 )
+  e8   d8   c8-.   b8-.  a8-.
+  g8-. | % 24
   fis4  fis'2  fis4 | % 25
   fis1 | % 26
   g4  g2  g4 | % 27
@@ -537,41 +537,24 @@ clarinetInotes =  \transpose c bes, \relative g' {
   f2 ~  f8   as8  g8  f8  | % 64
   es4 r4 r2 | % 65
   R1*3 | % 68
-  r4  c'2 \parenthesize \ff   c4 | % 69
-  c1 | \barNumberCheck #70
-  bes1 ~ | % 71
-  bes1 | % 72
-  bes8  \parenthesize \sf a8   a2  a4
-  | % 73
-  bes4 \parenthesize \sf a8   bes8
-  bes4 \parenthesize \sf a8   g8  | % 74
-  f1 ~ \ff | % 75
-  f1 | % 76
-  e1 | % 77
-  e1 | % 78
+  r4 \quoteDuring "fl1," { s4 s2 s1*9 } | % 78
   d4 r4 r2 | % 79
   R1*8 \bar "||"
   \key e \major R1*11 | % 98
-  gis2 \ff  gis4.  gis8 | % 99
-  gis4  gis4  gis4  gis4 |
-  \barNumberCheck #100
-  gis4  e2  e8.   e16  | % 101
-  fis2 \sf  gis2 \sf | % 102
-  fis2 \sf  b2 \sf | % 103
-  gis2 \sf r2 | % 104
+  \quoteDuring "ob1," {s1*6} | % 104
   R1*5 | % 109
   r2 r4  gis,4 | \barNumberCheck #110
   a4  b4  cis4  dis4 | % 111
   e1 ~ | % 112
   e1 | % 113
   e4  e2  dis8   cis8  | % 114
-  cis8   b8  e8  gis8  \grace {
+  cis8   b8  e8  gis8  \appoggiatura {
     gis8
   }  fis4  e8   dis8  | % 115
   e1 ~ | % 116
-  e1 | % 117
+  e1 ~ | % 117
   e4  e2  dis8   cis8  | % 118
-  cis8   b8  e8  gis8  \grace {
+  cis8   b8  e8  gis8  \appoggiatura {
     gis8
   }  fis4  e8   dis8  | % 119
   e4  gis8.   fis16   fis4  fis4
@@ -591,7 +574,7 @@ clarinetInotes =  \transpose c bes, \relative g' {
 
 clarinetIInotes =  \transpose c bes, \relative g' {
   \clef "treble" \time 4/4 \key g \major  | % 1
-  r2  g2 ~ \parenthesize \ff (  | % 2
+  r2  g'2 ~ \parenthesize \ff (  | % 2
   g16 fis16  e16  dis16 )  e8
   d8   c8   b8  a8  g8  | % 3
   fis2 (  c'2 ) | % 4
@@ -609,14 +592,15 @@ clarinetIInotes =  \transpose c bes, \relative g' {
   g1 | % 15
   a1 | % 16
   g1 | % 17
-  b4  b2  b4 | % 18
+  b4  b2  b4 ~ | % 18
   b4  b2  b4 | % 19
-  dis2  e2 | \barNumberCheck #20
-  dis2  e2 | % 21
+  dis2 \sf e2 \sf | \barNumberCheck #20
+  dis2 \sf e2 \sf | % 21
   dis4  dis4  dis4 r4 | % 22
-  r2  g2 ~  | % 23
-  g16   fis16  e16  dis16   e8
-  d8   c8   b8  a8  g8  | % 24
+  r2  g2 ~ (  | % 23
+  g16   fis16  e16  dis16 )
+  e8   d8   c8-.   b8-.  a8-.
+  g8-.  | % 24
   fis4  c'2  c4 | % 25
   c1 | % 26
   b4  b2  b4 | % 27
@@ -628,7 +612,7 @@ clarinetIInotes =  \transpose c bes, \relative g' {
   e8.   g,16   g8.   g16   g8.
   g16   g8.   g16  | % 32
   fis4..  c'16  c4..  a16 | % 33
-  a1 \bar "||"
+  a1 \fermata \bar "||"
   R1*17 \bar "||"
   \key f \major R1*5 | % 56
   d1 ~ | % 57
@@ -638,7 +622,7 @@ clarinetIInotes =  \transpose c bes, \relative g' {
   c1 ~ | % 61
   c1 | % 62
   as1 | % 63
-  g4  d'2  bes4 | % 64
+  g4  d'2  b4 | % 64
   c4 r4 r2 | % 65
   R1*3 | % 68
   r4  es2  es4 | % 69
@@ -666,13 +650,13 @@ clarinetIInotes =  \transpose c bes, \relative g' {
   e1 ~ | % 112
   e1 | % 113
   e4  cis'2  b8   a8  | % 114
-  a8   gis8  gis8  b8  \grace {
+  a8   gis8  gis8  b8  \appoggiatura {
     b8
   }  a4  gis8   fis8  | % 115
   e1 ~ | % 116
   e1 ~ | % 117
   e4  cis'2  b8   a8  | % 118
-  a8   gis8  gis8  b8  \grace {
+  a8   gis8  gis8  b8  \appoggiatura {
     b8
   }  a4  gis8   fis8  | % 119
   gis4  e'8.   dis16   dis4  dis4
@@ -793,11 +777,10 @@ bassoonInotes =  \relative d {
   b4  b4  d4  f4 | % 71
   as4.  f16   d16   b8
   b8  b8  b8  | % 72
-  b8  \sf \sf  b'8  b8  b8
+  b8  \sf  b'8  b8  b8
   b2 :8 | % 73
-  b2 :8 \sf \sf \sf \sf  b2 :8 \sf \sf \sf
-  \sf | % 74
-  c4. ( \ff \ff  g8  es'4.  d8
+  b2 :8 \sf b2 :8 \sf | % 74
+  c4. ( \ff  g8  es'4.  d8
   ) | % 75
   d8 (   c8   c4.  bes8
   as8  g8 )  | % 76
@@ -1014,7 +997,7 @@ bassoonIInotes =  \relative d {
 }
 
 
-englishhornInotes =  \transpose c f \relative e'' {
+englishhornInotes =  \transpose c f, \relative e'' {
   \clef "treble" \time 4/4 \key c \major | % 1
   R1*33 \bar "||"
   e2.    d4 | % 35
@@ -1023,16 +1006,15 @@ englishhornInotes =  \transpose c f \relative e'' {
   g2.  a8.   f16  | % 37
   e2 (  d8 ) r8  g8.   g16  | % 38
   g4..  e16  a4..  g16 | % 39
-  \once \omit TupletBracket
   \times 2/3  {
     g8   e8  f8
   }
   f2  f8.   e16  | \barNumberCheck #40
   e8  d4  a'8  a8  g4
   f8 | % 41
-  \grace {  f8 }  e4  d2  g,8.
+  \grace {  f8 }  e4  d2  \partCombineApart g,8.
   g16  | % 42
-  c4.  cis8  d8   b8  a8
+  c4.  cis8  d8   b8  \partCombineAutomatic a8
   g8  | % 43
   e'4.  e8  f8   d8  c8
   b8  | % 44
@@ -1049,14 +1031,14 @@ englishhornInotes =  \transpose c f \relative e'' {
   g32   f8   es8  | \barNumberCheck #50
   d4. \grace {  f16 }  es8  d4.
   \grace {  f16 }  es8 \bar "||"
-  \key bes \major  d8  r8 r4 r2
+  \key bes \major  d4 r4 r2
   | % 52
   R1*12 | % 64
   R1*23 \bar "||"
   \key a \major R1*41 \bar "|."
 }
 
-englishhornIInotes =  \transpose c f \relative c'' {
+englishhornIInotes =  \transpose c f, \relative c'' {
   \clef "treble" \time 4/4 \key c \major | % 1
   R1*33 \bar "||"
   c2.    g4 | % 35
@@ -1074,7 +1056,7 @@ englishhornIInotes =  \transpose c f \relative c'' {
   r2 r4  g8.   g16  | % 43
   c4.  c8  d8   b8  a8
   g8  | % 44
-  c2 ~  c2 ~ | % 45
+  c1 ~ | % 45
   c4  a8   f8   e4.  d8 | % 46
   f2  e8 r8  es'8.   c16  | % 47
   b4..  es16  es8.   f32
@@ -1084,15 +1066,15 @@ englishhornIInotes =  \transpose c f \relative c'' {
   b4..  es16  es8.   f32
   es32   d8   c8  | \barNumberCheck #50
   b4.  c8  b4.  c8 \bar "||"
-  bes8 r8 r4 r2 | % 52
+  bes4 r4 r2 | % 52
   R1*12 | % 64
   R1*23 \bar "||"
   \key a \major R1*41 \bar "|."
 }
 
-hornInotes =  \transpose c f \relative c'' {
+hornInotes =  \transpose c f, \relative c'' {
   \clef "treble" \time 4/4 \key c \major | % 1
-  r2  c2-"todo:nur hn 1?" ~ \ff  | % 2
+  r2  c2 ~ \ff  | % 2
   c4 r4 r2 | % 3
   R1*6 | % 9
   e2 ~  e8   e8  e8  e8
@@ -1107,8 +1089,8 @@ hornInotes =  \transpose c f \relative c'' {
   e1 | % 17
   e1 | % 18
   e1 | % 19
-  e2  e2 | \barNumberCheck #20
-  e2  e2 | % 21
+  e2 \parenthesize \sf e2 \parenthesize \sf | \barNumberCheck #20
+  e2 \parenthesize \sf e2 \parenthesize \sf | % 21
   e4  e4  e4 r4 | % 22
   r2  c2 ~ | % 23
   c4 r4 r2 | % 24
@@ -1166,7 +1148,7 @@ hornInotes =  \transpose c f \relative c'' {
   a4  a8.   a16   a4  a4 | % 112
   a4  a4  a4  a4 | % 113
   a4  a2  a4 | % 114
-  a4  cis8   e8  \grace {  e8 }
+  a4  cis8   e8  \appoggiatura {  e8 }
   d4  cis8   b8  | % 115
   a1 ~ | % 116
   a1 ~ | % 117
@@ -1188,9 +1170,11 @@ hornInotes =  \transpose c f \relative c'' {
   a,2 r2 \bar "|."
 }
 
-hornIInotes =  \transpose c f \relative c'' {
+hornIInotes =  \transpose c f, \relative c'' {
   \clef "treble" \time 4/4 \key c \major | % 1
-  R1*8 | % 9
+  r2 c2\ff~ | %2
+  c4 r r2 | %3
+  R1*6 | % 9
   c2 ~  c8   c8  c8  c8
   | \barNumberCheck #10
   e,1 | % 11
@@ -1202,7 +1186,7 @@ hornIInotes =  \transpose c f \relative c'' {
   c1 | % 17
   e,1 | % 18
   e1 | % 19
-  e2 \parenthesize \sf   e2 \parenthesize \sf  | \barNumberCheck
+  e2 \parenthesize \sf e2 \parenthesize \sf | \barNumberCheck
   #20
   e2 \parenthesize \sf   e2 \parenthesize \sf  | % 21
   e4  e4  e4 r4 | % 22
@@ -1219,7 +1203,7 @@ hornIInotes =  \transpose c f \relative c'' {
   c8.   c16   c8.   c16
   c8.   c16   c8.   c16  | % 32
   g4..  g16  g4..  g16 | % 33
-  g1 \bar "||"
+  g1 \fermata \bar "||"
   R1*17 \bar "||"
   R1*5 | % 56
   g1 ~ | % 57
@@ -1284,7 +1268,7 @@ hornIInotes =  \transpose c f \relative c'' {
 
 trumpetInotes =  \transpose c bes, \relative e' {
   \clef "treble" \time 4/4 \key g \major | % 1
-  e2 \ff \ff  r2 | % 2
+  e2 \ff  r2 | % 2
   R1*5 | % 7
   g'4  g8.   g16   g4
   g4 | % 8
@@ -1327,7 +1311,7 @@ trumpetInotes =  \transpose c bes, \relative e' {
   e4 | % 112
   e4  e4  e4  e4 | % 113
   e4  e2  e4 | % 114
-  e4  gis8   b8  \grace {  b8 }
+  e4  gis8   b8  \appoggiatura {  b8 }
   a4  gis8   fis8  | % 115
   e1 ~ | % 116
   e1 ~ | % 117
@@ -1367,13 +1351,17 @@ trumpetIInotes =  \transpose c bes, \relative e' {
   e1 | % 17
   b'1 ~ | % 18
   b1 | % 19
-  b,2  b2 | \barNumberCheck #20
-  b2  b2 | % 21
+  b,2 \sf b2 \sf | \barNumberCheck #20
+  b2 \sf b2 \sf | % 21
   b4  b'4  b4 r4 | % 22
   e,2 r2 | % 23
-  R1*11 \bar "||"
+  R1*7 | \barNumberCheck #30
+  r8.  e'16  e8.   e16   e8.
+  e16   e8.   e16  | % 31
+  e4 r4 r2 | % 32
+  R1*2 \bar "||"
   R1*17 \bar "||"
-  R1*13 | % 64
+  \key f \major R1*13 | % 64
   R1*23 \bar "||"
   \key e \major R1*11 | % 98
   e'2  e4.  e8 | % 99
@@ -1497,22 +1485,22 @@ violinInotes =  \relative d' {
   d16  d16  d16   d4 r4 | % 13
   <bes' bes'>4. \grace {  e,16 }  d16
   cis16   d8   d8  d8  d8  | % 14
-  d4 ~  d16  e16 (  f16  g16 )
+  d4 ~ ( d16  e16  f16  g16 )
   a16 (   b16  cis16  d16
   e16   f16  g16  a16 )  | % 15
-  <bes, bes'>4. \grace {  e,16 }  d16
+  <bes, bes'>4. \appoggiatura {  e,16 }  d16
   cis16   d8   d8  d8  d8  | % 16
-  d4 ~  d16 e16  f16  g16
-  a16   b16  cis16  d16
-  e16   f16  g16  a16  | % 17
-  cis,16   cis16  cis16  cis16
-  d16   d16  d16  d16
-  g16   g16  g16  g16
-  f16   f16  f16  f16  | % 18
-  cis16   cis16  cis16  cis16
-  d16   d16  d16  d16
-  g16   g16  g16  g16
-  f16   f16  f16  f16  | % 19
+  d4 ~ ( d16 e16  f16  g16 )
+  a16 (  b16  cis16  d16
+  e16   f16  g16  a16 ) | % 17
+  cis,4:16
+  d4:16
+  g4:16
+  f4:16  | % 18
+  cis4:16
+  d4:16
+  g4:16
+  f4:16  | % 19
   e16  \ff  e16  a16  a16
   e16   e16  cis16  cis16
   a16  \ff  a16  a'16  a16
@@ -1523,10 +1511,10 @@ violinInotes =  \relative d' {
   a16  \ff  a16  a'16  a16
   f16   f16  d16  d16  | % 21
   a4  <e cis' a'>4  <e cis' a'>4 r4 | % 22
-  d2  f'2 ~ | % 23
-  f16   e16  d16  cis16
-  d8   c8   bes8   a8  g8
-  f8  | % 24
+  d2  f'2 ~ ( | % 23
+  f16   e16  d16  cis16 )
+  d8   c8   bes8-. a8-. g8-.
+  f8-. | % 24
   e4  <c' bes'>2. :16 | % 25
   <c bes'>1 :16 | % 26
   <c a'>1 :16 | % 27
@@ -1545,11 +1533,10 @@ violinInotes =  \relative d' {
   \key es \major r8  c8  \f
   c8  c8   c8   c8  c8  c8
   | % 52
-  \grace {  es16 ( }  des8   c16  des16 )
-  \grace {  es16 ( }  des8   c16  des16
-  )  \grace {  es16 ( }  des8   c16  des16
-  )  \grace {  es16 ( }  des8   c16  des16
-  )  | % 53
+  \appoggiatura {  es16 ( }  des8   c16  des16 )
+  \appoggiatura {  es16 ( }  des8   c16  des16 )
+  \appoggiatura {  es16 ( }  des8   c16  des16 )
+  \appoggiatura {  es16 ( }  des8   c16  des16 ) | % 53
   c16  \sf  c16  es16  es16
   as16   as16  c16  c16   des,16
   \sf  des16  g16  g16   bes16
@@ -1574,7 +1561,7 @@ violinInotes =  \relative d' {
   c4.  bes8 ( | % 63
   bes8   a8   a4.  ges8
   f8  es8 )  | % 64
-  d4. ( \p  des'8 )  des4. (  c8
+  des4. ( \p  des'8 )  des4. (  c8
   ) | % 65
   c8 (   bes8   bes4.  as8
   ges8  f8 )  | % 66
@@ -1597,13 +1584,13 @@ violinInotes =  \relative d' {
   <g es'>2 :16  <g es'>2 :16 | % 76
   <as d>2 :16  <as d>2 :16 | % 77
   <g d'>2 :16  <g d'>2 :16 | % 78
-  c4. ( \p  g'8  es'4.  d8 | % 79
-  d8   c8   c4.  bes8 )
-  as8  g8 (  | \barNumberCheck #80
-  g8   f8 )  f8 (  d'8 )
-  d4.  c8 | % 81
+  c4. ( \p  g'8  es'4.  d8 ) | % 79
+  d8 ( c8   c4.  bes8 )
+  as8  g8 | \barNumberCheck #80
+  g8 ( f8 )  f8 (  d'8 )
+  d4.  c8 ( | % 81
   c8   b8   b4.  as8
-  g8  f8  | % 82
+  g8  f8 ) | % 82
   es16  \ff  <g,, g'>16  <g g'>16  <g
   g'>16   <g g'>16   <g g'>16  <g g'>16
   <g g'>16   es''16   <g,, g'>16  <g
@@ -1709,13 +1696,13 @@ violinInotes =  \relative d' {
   b'8 (   d8 )   d2  cis8
   b8  | % 114
   b8 (   a8 )  fis8 -!  a8 -!
-  \grace {  a8 }  g4  fis8   e8  | % 115
+  \appoggiatura {  a8 }  g4  fis8   e8  | % 115
   <d d'>2 (  <d cis'>2 | % 116
   <d b'>2  <d a'>2 ) | % 117
   <d b'>8 (   d'8 )   d2  cis8
   b8  | % 118
   b8 (   a8 )  fis8 -!  a8 -!
-  \grace {  a8 }  g4  fis8   e8  | % 119
+  \appoggiatura {  a8 }  g4  fis8   e8  | % 119
   d4 r4 r2 | \barNumberCheck #120
   r4  <a fis' d'>4  <a e' cis'>4  <a e'
   cis'>4 | % 121
@@ -1732,21 +1719,9 @@ violinInotes =  \relative d' {
 }
 
 violinIInotes =  \relative d' {
-  \clef "treble" \time 4/4 \key f \major | % 1
-  d2 \ff  f'2 ( ~ | % 2
-  f16   e16  d16  cis16 )
-  d8   c8   bes8 -.   a8 -.
-  g8 -.  f8 -.  | % 3
-  e4.  e32 (   f32  g32  a32 )
-  bes8   bes8  bes8  bes8  | % 4
-  cis,4.  cis32 (   d32  e32  f32
-  )   g8   g8  g8  g8  | % 5
-  bes,4 ( \trill  bes8. )   a32  bes32
-  a8   g'8  g8  g8  | % 6
-  bes,1 ~ \startTrillSpan | % 7
-  bes1 \stopTrillSpan | % 8
-  a4 r4 r2 | % 9
-  <f' a>2 :16  <f a>2 :16 | \barNumberCheck #10
+  \clef "treble" \time 4/4 | % 1
+  \quoteDuring "vl1" {s1*8} | % 9
+  <f a>2 :16  <f a>2 :16 | \barNumberCheck #10
   <e a>2 :16  <e a>2 :16 | % 11
   <e a>2 :16  <e a>2 :16 | % 12
   <f a>2 :16  <f a>2 :16 | % 13
@@ -1758,21 +1733,8 @@ violinIInotes =  \relative d' {
   <a a'>8 ~ | % 18
   <a a'>8  <a a'>4  <a a'>4  <a a'>4
   <a a'>8 | % 19
-  e''16  \ff  e16  a16  a16
-  e16   e16  cis16  cis16
-  a16  \ff  a16  a'16  a16
-  f16   f16  d16  d16  |
-  \barNumberCheck #20
-  a16  \ff  a16  a'16  a16
-  e16   e16  cis16  cis16
-  a16  \ff  a16  a'16  a16
-  f16   f16  d16  d16  | % 21
-  a4  <e cis' a'>4  <e cis' a'>4 r4 | % 22
-  d2  f'2 ~ | % 23
-  f16  e16  d16  cis16
-  d8   c8   bes8   a8  g8
-  f8  | % 24
-  e4  <g e'>2. :16 | % 25
+  \quoteDuring "vl1" {s1*5} | % 24
+  e'4  <g e'>2. :16 | % 25
   <g e'>1 :16 | % 26
   <a f'>1 :16 | % 27
   <a f'>1 :16 | % 28
@@ -1788,27 +1750,8 @@ violinIInotes =  \relative d' {
   g,16 | % 33
   g1 ^\fermata \bar "||"
   R1*17 \bar "||"
-  \key es \major r8   c8  \f
-  c8  c8   c8   c8  c8  c8
-  | % 52
-  \grace {  es16 ( }  des8   c16  des16 )
-  \grace {  es16 ( }  des8   c16  des16
-  )  \grace {  es16 ( }  des8   c16  des16
-  )  \grace {  es16 ( }  des8   c16  des16
-  )  | % 53
-  c16  \sf  c16  es16  es16
-  as16   as16  c16  c16   des,16
-  \sf  des16  g16  g16   bes16
-  bes16  des16  des16  | % 54
-  es,16  \sf  es16  as16  as16
-  c16   c16  es16  es16
-  es,16  \sf  es16  as16  as16
-  c16   c16  es16  es16  | % 55
-  f,16  \sf  f16  as16  as16
-  des16   des16  f16  f16
-  g,16  \sf  g16  bes16  bes16
-  es16   es16  g16  g16  | % 56
-  as16  \ff  <es, es'>16  <es es'>16
+  \quoteDuring "vl1" { s1*5 } | % 56
+  as''16  \ff  <es, es'>16  <es es'>16
   <es es'>16   <es es'>4 :16  <es es'>2 :16 | % 57
   <es es'>2 :16  <es es'>2 :16 | % 58
   <f es'>2 :16  <f es'>2 :16 | % 59
@@ -1935,49 +1878,27 @@ violinIInotes =  \relative d' {
   g8 (   b8 )   b2  a8
   g8  | % 114
   g8 (   fis8 )  d8 -!  fis8 -!
-  \grace {  fis8 }  e4  d8   cis8
+  \appoggiatura {  fis8 }  e4  d8   cis8
   | % 115
   <a fis'>2 (  a'2 | % 116
   g2  fis2 ) | % 117
   g8 (   b8 )   b2  a8
   g8  | % 118
   g8 (   fis8 )  d8 -!  fis8 -!
-  \grace {  fis8 }  e4  d8   cis8
+  \appoggiatura {  fis8 }  e4  d8   cis8
   | % 119
   d4 r4 r2 | \barNumberCheck #120
   r4  <a fis' d'>4  <a e' cis'>4  <a e'
   cis'>4 | % 121
   <a fis' d'>4 r4 r2 | % 122
-  r4  <a fis' d'>4  <a e' cis'>4  <a e'
-  cis'>4 | % 123
-  <a fis' d'>4.  a'8  fis8   d8
-  fis8  a8  | % 124
-  d8   a8  d8  a8
-  fis8   d8  fis8  a8  | % 125
-  d4 r4 r4 r8  a,,16   b32  cis32  | % 126
-  d2  <d a' fis'>2 | % 127
-  d2 r2 \bar "|."
+  \quoteDuring "vl1" {s1*6}
 }
 
 violanotes =  \relative d' {
-  \clef "alto" \time 4/4 \key f \major | % 1
-  d2 \ff  f'2 ~ ( | % 2
-  f16   e16  d16  cis16 )
-  d8   c8   bes8 -.   a8 -.
-  g8 -.  f8 -.  | % 3
-  e4.  e32 (   f32  g32
-  a32 )   bes8   bes8  bes8
-  bes8  | % 4
-  cis,4.  cis32 (   d32  e32
-  f32 )   g8   g8  g8
-  g8  | % 5
-  bes,4 ( \trill  bes8. )   a32  bes32
-  a8   g'8  g8  g8  | % 6
-  bes,1 ~ \startTrillSpan | % 7
-  bes1 \stopTrillSpan | % 8
-  a4 r4 r2 | % 9
-  <d, a' f' a>2 (  a''8 )   f8  a8
-  f8  | \barNumberCheck #10
+  \clef "alto" \time 4/4 | % 1
+  \quoteDuring "vl1" {s1*8}
+  <d, a' f' a>2 (  a''8 )   f8-!  a8-!
+  f8-!  | \barNumberCheck #10
   a16   a,16  a16  a16
   a16   a16  a16  a16   a4 r4 | % 11
   <cis e a>2 (  a'8 )   a8  e8
@@ -1987,12 +1908,12 @@ violanotes =  \relative d' {
   <g' bes>4. \grace {  e16 }  d16
   cis16   d8   d8  d8
   d8  | % 14
-  d4 ~  d16 e16 (  f16
+  d4 ~ ( d16 e16 f16
   g16 )   a4  d,4 | % 15
-  <g bes>4. \grace {  e16 }  d16
+  <g bes>4. \appoggiatura {  e16 }  d16
   cis16   d8   d8  d8  d8  | % 16
-  d4 ~  d16 e16  f16
-  g16   a4  d,4 | % 17
+  d4 ~ ( d16 e16  f16
+  g16 )  a4  d,4 | % 17
   e8   e8  d8  d8
   cis8   cis8  d8  d8  | % 18
   e8   e8  d8  d8
@@ -2004,19 +1925,9 @@ violanotes =  \relative d' {
   <d f>8 \parenthesize \sf   <d f>4  <d f>8 | % 21
   <cis e>4  <a e' cis'>4  <a e' cis'>4 r4
   | % 22
-  d2  f'2 ~ | % 23
-  f16   e16  d16  cis16
-  d8   c8   bes8   a8
-  g8  f8  | % 24
-  e4  c,4  e4  g4 | % 25
-  c4.  g16   e16   c8   c8
-  c8  c8  | % 26
-  c4  c4  f4  a4 | % 27
-  c4.  a16   f16   c8   c8
-  c8  c8  | % 28
-  des4  des4  f4  as4 | % 29
-  des4.  des16   c16   des4
-  c4 | \barNumberCheck #30
+  \quoteDuring "vl1" { s1*2 s4 }
+  \quoteDuring "vc" { s4*3 s1*4 } | % 29
+  des4. des16 c des4 c | \barNumberCheck #30
   as'8.   d16   d8.   d16
   d8.   d16   d8.   d16  | % 31
   d8.   d,16   d8.   d16
@@ -2140,7 +2051,7 @@ violanotes =  \relative d' {
   fis16   fis16   fis16  fis16  fis16
   | % 98
   R1*5 | % 103
-  d'2. \parenthesize \sfz   fis,4 | % 104
+  d'2. \parenthesize \sfz fis,4 \parenthesize \p | % 104
   g1 | % 105
   fis8 (   a8 )  d8  d8   d2
   :8 | % 106
@@ -2208,10 +2119,10 @@ cellibassinotes =  \relative d {
   a2 :8 \sf  a2 :8 \sf \sf | \barNumberCheck #20
   a2 :8 \sf \sf  a2 :8 \sf \sf | % 21
   a4  a4  a4 r4 | % 22
-  d2  f'2 ~ | % 23
-  f16   e16  d16  cis16
-  d8   c8   bes8   a8
-  g8  f8  | % 24
+  d2  f'2 ~ ( | % 23
+  f16   e16  d16  cis16 )
+  d8   c8   bes8-. a8-.
+  g8-.  f8-.  | % 24
   e4  c4  e4  g4 | % 25
   c4.  g16   e16   c8   c8
   c8  c8  | % 26
@@ -2225,7 +2136,7 @@ cellibassinotes =  \relative d {
   bes4  bes4  bes4  bes4 | % 32
   c4..  c16  c4..  c16 | % 33
   c1 ^\fermata \bar "||"
-  r8   ^ "1 Violoncello solo"
+  r8 ^ "1 Violoncello solo"
   f,8 (   a8  c8 )   f8 (   c8
   e8  c8 )  | % 35
   f4  f,4  f4 r4 | % 36
@@ -2393,7 +2304,7 @@ bassinotesI =  \relative bes, {
 }
 
 bassinotesII =  \relative c {
-  \clef "bass" \time 4/4 \key f \major \transposition c | % 1
+  \clef "bass" \time 4/4 \key f \major | % 1
   R1*33 \bar "||"
   R1*17 \bar "||"
   \key es \major R1*31 | % 82
@@ -2443,4 +2354,21 @@ bassinotesII =  \relative c {
   fis8  fis8  ^ "coi Violoncelli" | % 98
   R1*30 \bar "|."
 }
+
+\addQuote "fl1" { \fluteInotes }
+\addQuote "fl2" { \fluteIInotes }
+\addQuote "fl1," { \transpose c c, \fluteInotes }
+\addQuote "fl2," { \transpose c c, \fluteIInotes }
+
+\addQuote "ob1" { \oboeInotes }
+\addQuote "ob2" { \oboeIInotes }
+\addQuote "ob1," { \transpose c c, \oboeInotes }
+\addQuote "ob2," { \transpose c c, \oboeIInotes }
+
+\addQuote "vl1" { \violinInotes }
+\addQuote "vl1," {\transpose c c, \violinInotes }
+\addQuote "vl2" { \violinIInotes }
+\addQuote "vl2," {\transpose c c, \violinIInotes }
+
+\addQuote "vc" { \cellibassinotes }
 
