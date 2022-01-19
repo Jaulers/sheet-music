@@ -62,7 +62,7 @@
       \new StaffGroup
       <<
         \new Staff \with {
-          instrumentName = "Flute 1,2"
+          instrumentName = "Flauto 1,2"
           shortInstrumentName = \markup{"Fl. " \raise #1.5 \center-column{"1" "2"}}
         }{
           \partCombine \keepWithTag #'score \fluteInotes \keepWithTag #'score \fluteIInotes
@@ -74,15 +74,15 @@
           \partCombine \keepWithTag #'score \oboeInotes \keepWithTag #'score \oboeIInotes
         }
         \new Staff \with {
-          instrumentName = "Cor Anglais 1,2"
-          shortInstrumentName = \markup{"C.A." \raise #1.5 \center-column{"1" "2"}}
+          instrumentName = "Corno inglese 1,2"
+          shortInstrumentName = \markup{"Ci." \raise #1.5 \center-column{"1" "2"}}
         }{
           \partCombine {
             \transposition f \keepWithTag #'score \transpose f, c \englishhornInotes } {
             \transposition f \keepWithTag #'score \transpose f, c \englishhornIInotes }
         }
         \new Staff \with {
-          instrumentName = \markup{\center-column{"Clarinet 1,2" "in B"}}
+          instrumentName = \markup{\center-column{"Clarinetto 1,2" "in B"}}
           shortInstrumentName = \markup{\center-column{"Cl." "in B"}  \center-column{"1" "2"}}
         }{
          \partCombine {
@@ -90,8 +90,8 @@
            \transposition bes \keepWithTag #'score \transpose bes, c \clarinetIInotes }
         }
         \new Staff \with {
-          instrumentName = "Bassoon 1,2"
-          shortInstrumentName = \markup{"Bn. " \raise #1.5 \center-column{"1" "2"}}
+          instrumentName = "Fagotto 1,2"
+          shortInstrumentName = \markup{"Fg. " \raise #1.5 \center-column{"1" "2"}}
         }{
           \partCombine \keepWithTag #'score \bassoonInotes \keepWithTag #'score \bassoonIInotes
         }
@@ -100,16 +100,16 @@
       \new StaffGroup
       <<
         \new Staff \with {
-          instrumentName = \markup{\center-column{"Horn 1,2" \line{"in F"}} }
-          shortInstrumentName = \markup{\center-column{"Hn." "in F"} \center-column{"1" "2"}}
+          instrumentName = \markup{\center-column{"Corno 1,2" \line{"in F"}} }
+          shortInstrumentName = \markup{\center-column{"Cor." "in F"} \center-column{"1" "2"}}
         }{
           \partCombine {
             \transposition f \keepWithTag #'score \transpose f, c \hornInotes } {
             \transposition f \keepWithTag #'score \transpose f, c \hornIInotes }
         }
         \new Staff \with {
-          instrumentName = \markup{\center-column{"Trompete 1,2" "in B"}}
-          shortInstrumentName = \markup{\center-column{"Tpt." "in B"}  \center-column{"1" "2"}}
+          instrumentName = \markup{\center-column{"Tromba 1,2" "in B"}}
+          shortInstrumentName = \markup{\center-column{"Tr." "in B"}  \center-column{"1" "2"}}
         }{
           \partCombine {
             \transposition bes \keepWithTag #'score \transpose bes, c \trumpetInotes } {
@@ -118,21 +118,21 @@
       >>
     
       \new Staff \with {
-        instrumentName = "Pauken"
-        shortInstrumentName = "Pk."
+        instrumentName = "Timpani"
+        shortInstrumentName = "Timp."
       }{
         \keepWithTag #'score \timpaninotes
       }
       
       \new StaffGroup <<
         \new Staff \with {
-          instrumentName = "Violine 1"
+          instrumentName = "Violino 1"
           shortInstrumentName = "Vl. 1"
         }{
           \keepWithTag #'score \violinInotes
         }
         \new Staff \with {
-          instrumentName = "Violine 2"
+          instrumentName = "Violino 2"
           shortInstrumentName = "Vl. 2"
         }{
           \keepWithTag #'score \violinIInotes
@@ -144,10 +144,20 @@
          \keepWithTag #'score  \violanotes
         }
         \new Staff \with {
-          instrumentName = "Violoncello"
-          shortInstrumentName = "Vc."
+          instrumentName = \markup{\center-column{"Violoncello" "Contrabasso"}}
+          shortInstrumentName = \markup{\center-column{"Vc." "Cb."}}
+          soloText = #""
+          soloIIText = #""
+          aDueText = #""
         }{
-          \keepWithTag #'score \cellibassinotes
+          \partCombine \keepWithTag #'score \cellibassinotes \keepWithTag #'score \bassinotesI
+        }
+        \new Staff \with {
+          \RemoveAllEmptyStaves
+          instrumentName = \markup{\center-column{"Contrabasso"}}
+          shortInstrumentName = \markup{\center-column{"Cb."}}
+        }{
+          \keepWithTag #'score \bassinotesII
         }
       >>
     >>
