@@ -23,7 +23,7 @@
     \override ParenthesesItem.padding = #0.3
     \override ParenthesesItem.stencils = #bracket-stencils
     
-    quotedCueEventTypes = #'(note-event rest-event tie-event beam-event tuplet-span-event slur-event trill-span-event)
+    %quotedCueEventTypes = #'(note-event rest-event tie-event beam-event tuplet-span-event slur-event trill-span-event)
   }
 }
 \paper {
@@ -57,7 +57,7 @@
     }
     <<
       \new Staff \with { \RemoveAllEmptyStaves }{
-        \global
+        \keepWithTag #'score \global
       }
       \new StaffGroup
       <<
@@ -163,3 +163,294 @@
     >>
   }
 }
+
+\book {
+  \bookOutputName "01a_flute1"
+  \header {
+    instrument = "Flauto 1"
+  }
+  \score {
+    \new Staff <<
+      \keepWithTag #'part \global
+      \compressEmptyMeasures \keepWithTag #'part \fluteInotes
+    >>
+  }
+}
+\book {
+  \bookOutputName "01b_flute2"
+  \header {
+    instrument = "Flauto 2"
+  }
+  \score {
+    \new Staff <<
+      \keepWithTag #'part \global
+      \compressEmptyMeasures \keepWithTag #'part \fluteIInotes
+    >>
+  }
+}
+\book {
+  \bookOutputName "02a_oboe1"
+  \header {
+    instrument = "Oboe 1"
+  }
+  \score {
+    \new Staff <<
+      \keepWithTag #'part \global
+      \compressEmptyMeasures \keepWithTag #'part \oboeInotes
+    >>
+  }
+}
+\book {
+  \bookOutputName "02b_oboe2"
+  \header {
+    instrument = "Oboe 2"
+  }
+  \paper {
+    ragged-last-bottom = ##t
+  }
+  \score {
+    \new Staff <<
+      \keepWithTag #'part \global
+      \compressEmptyMeasures \keepWithTag #'part \oboeIInotes
+    >>
+  }
+}
+\book {
+  \bookOutputName "02c_cor_anglais1"
+  \header {
+    instrument = "Corno inglese 1"
+  }
+  \paper {
+    ragged-last-bottom = ##t
+  }
+  \score {
+    \new Staff <<
+      \keepWithTag #'part \global
+      \compressEmptyMeasures {\transposition f' \keepWithTag #'part \transpose f, c \englishhornInotes}
+    >>
+  }
+}
+\book {
+  \bookOutputName "02d_cor_anglais2"
+  \header {
+    instrument = "Corno inglese 2"
+  }
+  \paper {
+    ragged-last-bottom = ##t
+  }
+  \score {
+    \new Staff <<
+      \keepWithTag #'part \global
+      \compressEmptyMeasures {\transposition f' \keepWithTag #'part \transpose f, c \englishhornIInotes}
+    >>
+  }
+}
+\book {
+  \bookOutputName "03a_clarinet1"
+  \header {
+    instrument = "Clarinet 1 in Bb"
+  }
+  \score {
+    \new Staff <<
+      \keepWithTag #'part \global
+      \compressEmptyMeasures {\transposition bes \keepWithTag #'part \transpose bes, c \clarinetInotes }
+    >>
+  }
+}
+
+\book {
+  \bookOutputName "03a_clarinet2"
+  \header {
+    instrument = "Clarinet 2 in Bb"
+  }
+  \score {
+    \new Staff <<
+      \keepWithTag #'part \global
+      \compressEmptyMeasures {\transposition bes \keepWithTag #'part \transpose bes, c \clarinetIInotes }
+    >>
+  }
+}
+
+\book {
+  \bookOutputName "04a_bassoon1"
+  \header {
+    instrument = "Bassoon 1"
+  }
+  \score {
+    \new Staff <<
+      \keepWithTag #'part \global
+      \compressEmptyMeasures \keepWithTag #'part \bassoonInotes
+    >>
+  }
+}
+\book {
+  \bookOutputName "04b_bassoon2"
+  \header {
+    instrument = "Bassoon 2"
+  }
+  \score {
+    \new Staff <<
+      \keepWithTag #'part \global
+      \compressEmptyMeasures \keepWithTag #'part \bassoonIInotes
+    >>
+  }
+}
+
+\book {
+  \bookOutputName "05a_horn1"
+  \header {
+    instrument = "Horn 1 in F"
+  }
+  \paper {
+    ragged-last-bottom = ##t
+  }
+  \score {
+    \new Staff <<
+      \keepWithTag #'part \global
+      \compressEmptyMeasures {\transposition f' \keepWithTag #'part \transpose f, c \hornInotes}
+    >>
+  }
+}
+\book {
+  \bookOutputName "05b_horn2"
+  \header {
+    instrument = "Horn 2 in F"
+  }
+  \paper {
+    ragged-last-bottom = ##t
+  }
+  \score {
+    \new Staff <<
+      \keepWithTag #'part \global
+      \compressEmptyMeasures {\transposition f' \keepWithTag #'part \transpose f, c \hornIInotes}
+    >>
+  }
+}
+\book {
+  \bookOutputName "06a_trumpet1"
+  \header {
+    instrument = "Trumpet 1 in Bb"
+  }
+  \paper {
+    ragged-last-bottom = ##t
+  }
+  \score {
+    \new Staff <<
+      \keepWithTag #'part \global
+      \compressEmptyMeasures {\transposition bes \keepWithTag #'part \transpose bes, c \trumpetInotes}
+    >>
+  }
+}
+\book {
+  \bookOutputName "06b_trumpet2"
+  \header {
+    instrument = "Trumpet 2 in Bb"
+  }
+  \paper {
+    ragged-last-bottom = ##t
+  }
+  \score {
+    \new Staff <<
+      \keepWithTag #'part \global
+      \compressEmptyMeasures {\transposition bes \keepWithTag #'part \transpose bes, c \trumpetIInotes}
+    >>
+  }
+}
+\book {
+  \bookOutputName "07_timpani"
+  \header {
+    instrument = "Timpani"
+  }
+  \paper {
+    ragged-last-bottom = ##t
+  }
+  \score {
+    \new Staff <<
+      \keepWithTag #'part \global
+      \compressEmptyMeasures \keepWithTag #'part \timpaninotes
+    >>
+  }
+}
+
+\book {
+  \bookOutputName "08_violin1"
+  \header {
+    instrument = "Violin 1"
+  }
+  \paper { 
+    first-page-number = #2
+    print-page-number = ##f
+  }
+  \score {
+    \new Staff <<
+      \keepWithTag #'part \global
+      \compressEmptyMeasures \keepWithTag #'part \violinInotes
+    >>
+  }
+}
+\book {
+  \bookOutputName "09_violin2"
+  \header {
+    instrument = "Violin 2"
+  }
+  \paper { 
+    first-page-number = #2
+    print-page-number = ##f
+  }
+  \score {
+    \new Staff <<
+      \keepWithTag #'part \global
+      \compressEmptyMeasures \keepWithTag #'part \violinIInotes
+    >>
+  }
+}
+\book {
+  \bookOutputName "10_viola"
+  \header {
+    instrument = "Viola"
+  }
+  \paper { 
+    first-page-number = #2
+    print-page-number = ##f
+  }
+  \score {
+    \new Staff <<
+      \keepWithTag #'part \global
+      \compressEmptyMeasures \keepWithTag #'part \violanotes
+    >>
+  }
+}
+\book {
+  \bookOutputName "11_celli_bassi"
+  \header {
+    instrument = "Violoncello et Contrabasso"
+  }
+  \paper { 
+    first-page-number = #2
+    print-page-number = ##f
+  }
+  \score {
+    <<
+      \new Staff \with { \RemoveAllEmptyStaves }{
+        \keepWithTag #'part \global
+      }
+      \new StaffGroup <<
+        \new Staff \with {
+          soloText = #""
+          soloIIText = #""
+          aDueText = #""
+        }{
+          \compressEmptyMeasures \partCombine \keepWithTag #'part \cellibassinotes \keepWithTag #'part \bassinotesI
+        }
+        \new Staff \with {
+          \RemoveAllEmptyStaves
+          instrumentName = \markup{\center-column{"Contrabasso"}}
+          shortInstrumentName = \markup{\center-column{"Cb."}}
+        }{
+          \compressEmptyMeasures \keepWithTag #'part \bassinotesII
+        }
+      >>
+    >>
+  }
+}
+

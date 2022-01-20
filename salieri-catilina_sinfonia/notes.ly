@@ -2,22 +2,22 @@
 global = {
   \accidentalStyle Score.modern
   \tempo "Allegro"
-  s1*33
-  \bar "||" \break
-  \tempo "Larghetto"
-  s1*17
-  \bar "||" \break
-  \tempo "Primo tempo"
-  s1*31
-  s1*5
+  \skip1*33
   \bar "||"
-  s1*40
+  \tag #'score {\break}
+  \tempo "Larghetto"
+  \skip1*17
+  \bar "||"
+  \tag #'score {\break}
+  \tempo "Primo tempo"
+  \skip1*36
+  \bar "||"
+  \skip1*40
 }
 
 fluteInotes =  \relative gis'' {
   \clef "treble" \time 4/4 \key f \major | % 1
-  R1*4 | % 5
-  R1*2 | % 7
+  R1*6 | % 7
   gis4  gis8.   gis16   gis4
   gis4 | % 8
   a4 r4 r2 | % 9
@@ -45,7 +45,10 @@ fluteInotes =  \relative gis'' {
   g4..  bes'16  bes4..  bes,16 | % 33
   bes1 ^\fermata \bar "||"
   R1*17 \bar "||"
-  \key es \major R1*5 | % 56
+  \key es \major
+  \tag #'part {<>_\markup { Vc. } \cueDuringWithClef "vc" #DOWN "bass" {R1}}
+  \tag #'score {R1}
+  R1*4 | % 56
   as'1 ~ | % 57
   as1 | % 58
   a1 ~ | % 59
@@ -101,7 +104,10 @@ fluteInotes =  \relative gis'' {
   d4 r4  d4 r4 | % 96
   cis4 r4  cis4 r4 | % 97
   cis4 r4  cis4 r4 | % 98
-  R1*11 | % 109
+  R1*5
+  \tag #'part {<>-"Vl.1" \cueDuring "vl1" #UP {s1}}
+  \tag #'score {R1}
+  R1*5| % 109
   r2 r4  fis,4 | \barNumberCheck #110
   g4  a4  b4  cis4 | % 111
   d2  cis2 | % 112
@@ -158,7 +164,10 @@ fluteIInotes =  \relative d'' {
   e4..  e'16  e4..  g,16 | % 33
   g1 \fermata \bar "||"
   R1*17 \bar "||"
-  \key es \major R1*5 | % 56
+  \key es \major 
+  \tag #'part {<>_\markup { Vc. } \cueDuringWithClef "vc" #DOWN "bass" {R1}}
+  \tag #'score {R1}
+  R1*4 | % 56
   c1 ~ | % 57
   c1 | % 58
   c1 ~ | % 59
@@ -199,14 +208,17 @@ fluteIInotes =  \relative d'' {
   b4 r4  b4 r4 | % 96
   ais4 r4  ais4 r4 | % 97
   ais4 r4  ais4 r4 | % 98
-  R1*11 | % 109
+  R1*5
+  \tag #'part {<>-"Vl.1" \cueDuring "vl1" #UP {s1}}
+  \tag #'score {R1}
+  R1*5| % 109
   r2 r4  d,4 | \barNumberCheck #110
   e4  fis4  g4  e4 | % 111
   fis2  a2 | % 112
   g2  fis2 | % 113
   g8 (   b8 )   b2  a8
   g8  | % 114
-  g8 (   fis8 )  d8  fis8
+  g8 (   fis8 )  d8 -. fis8 -.
   \appoggiatura {  fis8 }  e4  d8   cis8
   | % 115
   fis2 (  a2 | % 116
@@ -274,7 +286,10 @@ oboeInotes =  \relative f'' {
   g4..  bes'16  bes4..  bes,16 | % 33
   bes1 ^\fermata \bar "||"
   R1*17 \bar "||"
-  \key es \major R1*5 | % 56
+  \key es \major
+  \tag #'part {<>_\markup { Vc. } \cueDuringWithClef "vc" #DOWN "bass" {R1}}
+  \tag #'score {R1}
+  R1*4 | % 56
   as'1 ~ | % 57
   as1 | % 58
   a1 ~ | % 59
@@ -401,7 +416,10 @@ oboeIInotes =  \relative f'' {
   e4..  e'16  e4..  g,16 | % 33
   g1 \fermata \bar "||"
   R1*17 \bar "||"
-  \key es \major R1*5 | % 56
+  \key es \major
+  \tag #'part {<>_\markup { Vc. } \cueDuringWithClef "vc" #DOWN "bass" {R1}}
+  \tag #'score {R1}
+  R1*4 | % 56
   c1 ~ | % 57
   c1 | % 58
   c1 ~ | % 59
@@ -525,7 +543,10 @@ clarinetInotes =  \transpose c bes, \relative g' {
   a4..  a'16  a4..  c,16 | % 33
   c1 ^\fermata \bar "||"
   R1*17 \bar "||"
-  \key f \major R1*5 | % 56
+  \key f \major
+  \tag #'part {<>_\markup { Vc. } \cueDuringWithClef "vc" #DOWN "bass" {R1}}
+  \tag #'score {R1}
+  R1*4 | % 56
   f1 ~ | % 57
   f1 ~ | % 58
   f1 ~ | % 59
@@ -631,7 +652,10 @@ clarinetIInotes =  \transpose c bes, \relative g' {
   fis4..  c'16  c4..  a16 | % 33
   a1 \fermata \bar "||"
   R1*17 \bar "||"
-  \key f \major R1*5 | % 56
+  \key f \major
+  \tag #'part {<>_\markup { Vc. } \cueDuringWithClef "vc" #DOWN "bass" {R1}}
+  \tag #'score {R1}
+  R1*4 | % 56
   d1 ~ | % 57
   d1 ~ | % 58
   d1 ~ | % 59
@@ -823,7 +847,10 @@ bassoonInotes =  \relative d {
   d4 r4  d4 r4 | % 96
   cis4 r4  cis4 r4 | % 97
   cis4 r4  cis4 r4 | % 98
-  R1*11 | % 109
+  R1*5
+  \tag #'part {<>-"Vl.1" \cueDuringWithClef "vl1" #UP "treble" {s1}}
+  \tag #'score {R1}
+  R1*5| % 109
   d,1 ~ | \barNumberCheck #110
   d1 ~ | % 111
   d1 ~ | % 112
@@ -983,7 +1010,10 @@ bassoonIInotes =  \relative d {
   b4 r4  b4 r4 | % 96
   ais4 r4  ais4 r4 | % 97
   ais4 r4  ais4 r4 | % 98
-  R1*11 | % 109
+  R1*5
+  \tag #'part {<>-"Vl.1" \cueDuringWithClef "vl1" #UP "treble" {s1}}
+  \tag #'score {R1}
+  R1*5| % 109
   d,,1 ~ | \barNumberCheck #110
   d1 ~ | % 111
   d1 ~ | % 112
@@ -1050,9 +1080,10 @@ englishhornInotes =  \transpose c f, \relative e'' {
   \appoggiatura {  f16 }  es8 \bar "||"
   \key bes \major  d4 r4 r2
   | % 52
-  R1*12 | % 64
-  R1*23 \bar "||"
-  \key a \major R1*41 \bar "|."
+  R1*35 \bar "||"
+  \key a \major
+  R1*41
+  \bar "|."
 }
 
 englishhornIInotes =  \transpose c f, \relative c'' {
@@ -1084,8 +1115,7 @@ englishhornIInotes =  \transpose c f, \relative c'' {
   es32   d8   c8  | \barNumberCheck #50
   b4.  c8  b4.  c8 \bar "||"
   bes4 r4 r2 | % 52
-  R1*12 | % 64
-  R1*23 \bar "||"
+  R1*35 \bar "||"
   \key a \major R1*41 \bar "|."
 }
 
@@ -1124,7 +1154,10 @@ hornInotes =  \transpose c f, \relative c'' {
   g4..  d'16  d4..  d16 | % 33
   d1 ^\fermata \bar "||"
   R1*17 \bar "||"
-  \key bes \major R1*5 | % 56
+  \key bes \major
+  \tag #'part {<>_\markup { Vc. } \cueDuringWithClef "vc" #DOWN "bass" {R1}}
+  \tag #'score {R1}
+  R1*4 | % 56
   g1 ~ | % 57
   g1 ~ | % 58
   g1 ~ | % 59
@@ -1222,7 +1255,10 @@ hornIInotes =  \transpose c f, \relative c'' {
   g4..  g16  g4..  g16 | % 33
   g1 \fermata \bar "||"
   R1*17 \bar "||"
-  R1*5 | % 56
+  \key bes \major
+  \tag #'part {<>_\markup { Vc. } \cueDuringWithClef "vc" #DOWN "bass" {R1}}
+  \tag #'score {R1}
+  R1*4 | % 56
   g1 ~ | % 57
   g1 ~ | % 58
   g1 ~ | % 59
@@ -1313,8 +1349,14 @@ trumpetInotes =  \transpose c bes, \relative e' {
   e4 r4 r2 | % 32
   R1*2 \bar "||"
   R1*17 \bar "||"
-  \key f \major R1*13 | % 64
-  R1*23 \bar "||"
+  \key f \major
+  \tag #'part {<>_\markup { Vc. } \cueDuringWithClef "vc" #DOWN "bass" {R1}}
+  \tag #'score {R1}
+  R1*30
+  \tag #'part {<>_\markup { Vl.1 } \cueDuring "vl1" #UP {s1}}
+  \tag #'score {R1}
+  R1*4
+  \bar "||"
   \key e \major R1*11 | % 98
   gis2 \ff  gis4.  gis8 | % 99
   gis4  gis4  gis4  gis4 |
@@ -1378,8 +1420,14 @@ trumpetIInotes =  \transpose c bes, \relative e' {
   e4 r4 r2 | % 32
   R1*2 \bar "||"
   R1*17 \bar "||"
-  \key f \major R1*13 | % 64
-  R1*23 \bar "||"
+  \key f \major
+  \tag #'part {<>_\markup { Vc. } \cueDuringWithClef "vc" #DOWN "bass" {R1}}
+  \tag #'score {R1}
+  R1*30
+  \tag #'part {<>_\markup { Vl.1 } \cueDuring "vl1" #UP {s1}}
+  \tag #'score {R1}
+  R1*4
+  \bar "||"
   \key e \major R1*11 | % 98
   e2  e4.  e8 | % 99
   e4  e4  e4  e4 |
@@ -1415,7 +1463,7 @@ trumpetIInotes =  \transpose c bes, \relative e' {
 }
 
 timpaninotes =  \relative d {
-  \clef "bass" \time 4/4 \key f \major | % 1
+  \clef "bass" \time 4/4 | % 1
   \tag #'part \mark "in D & A"
   d2 \ff r2 | % 2
   R1*5 | % 7
@@ -1438,9 +1486,14 @@ timpaninotes =  \relative d {
   d2 r2 | % 23
   R1*11 \bar "||"
   R1*17 \bar "||"
-  \key es \major R1*13 | % 64
-  R1*23 \bar "||"
-  \key d \major R1*11 | % 98
+  \tag #'part {<>_\markup { Vc. } \cueDuring "vc" #DOWN {R1}}
+  \tag #'score {R1}
+  R1*30
+  \tag #'part {<>_\markup { Vl.1 } \cueDuringWithClef "vl1" #UP "treble" {s1}}
+  \tag #'score {R1}
+  R1*4
+  \bar "||"
+  R1*11 | % 98
   d2 \ff  d4.  d8 | % 99
   d4  d4  d4  d4 |
   \barNumberCheck #100
@@ -1696,8 +1749,7 @@ violinInotes =  \relative d' {
   e4 (  d4  cis8 )   b'8 (  g8
   e8 )  | % 107
   
-  \override TextSpanner.bound-details.left.text = "cresc."
-  fis2 ~ \startTextSpan
+  fis2 ~ _\markup{\italic cresc.}
   fis8.   a16  \acciaccatura {  b8 }  a8
   g16  a16  | % 108
   b4 (  a4  b4  cis4 ) | % 109
@@ -1708,7 +1760,7 @@ violinInotes =  \relative d' {
   g8.   a16  \acciaccatura {  b8 }
   a8   g16  a16   b4
   cis4 | % 111
-  <d, d'>2 ( \stopTextSpan \ff  <d cis'>2 | % 112
+  <d, d'>2 ( \ff  <d cis'>2 | % 112
   <d b'>2  <d a'>2 ) | % 113
   b'8 (   d8 )   d2  cis8
   b8  | % 114
@@ -1878,8 +1930,7 @@ violinIInotes =  \relative d' {
   cis4 (  b4  a8 )   g'8 (  e8
   cis8 )  | % 107
   
-  \override TextSpanner.bound-details.left.text = "cresc."
-  d2 ~ \startTextSpan
+  d2 ~ _\markup{\italic cresc.}
   d8.   fis16  \acciaccatura {  g8 }
   fis8   e16  fis16  | % 108
   g4 (  fis4  g4  e4 ) | % 109
@@ -1890,7 +1941,7 @@ violinIInotes =  \relative d' {
   e8.   fis16  \acciaccatura {  g8 }
   fis8   e16  fis16   g4
   e4 | % 111
-  <a, fis'>2 ( \stopTextSpan \parenthesize \ff   a'2 | % 112
+  <a, fis'>2 ( \parenthesize \ff   a'2 | % 112
   g2  fis2 ) | % 113
   g8 (   b8 )   b2  a8
   g8  | % 114
@@ -2073,12 +2124,11 @@ violanotes =  \relative d' {
   fis8 (   a8 )  d8  d8   d2
   :8 | % 106
   d2 :8  d2 :8 | % 107
-  \override TextSpanner.bound-details.left.text = "cresc."
-  d2 :8  d2 :8 \startTextSpan | % 108
+  d2 :8  d2 :8 _\markup{\italic cresc.} | % 108
   d2 :8  d2 :8 | % 109
   d2 :8  d2 :8 | \barNumberCheck #110
   d2 :8  d2 :8 | % 111
-  d2 :8 \stopTextSpan \ff  d2 :8 | % 112
+  d2 :8 \ff  d2 :8 | % 112
   d2 :8  d2 :8 | % 113
   g2 :8  g2 :8 | % 114
   a2 :8  a,2 :8 | % 115
@@ -2182,7 +2232,8 @@ cellibassinotes =  \relative d {
   c8  c8  c8  | % 49
   c2 :8  c2 :8 | \barNumberCheck #50
   c2 :8  c2 :8 \bar "||"
-  \set Staff.shortInstrumentName = \markup{\center-column{"Vc." "Cb."}}
+  \tag #'score \set Staff.shortInstrumentName = \markup{\center-column{"Vc." "Cb."}}
+  \tag #'part \set Staff.shortInstrumentName = ""
   \key es \major  c,2 :8  ^
   "Tutti Vc. et Cb." \f  c2 :8 | % 52
   bes2 :8  bes2 :8 | % 53
@@ -2273,19 +2324,19 @@ cellibassinotes =  \relative d {
   <fis' cis'>8  \parenthesize \sf   fis,8  fis8
   fis8   <fis' cis'>8  \parenthesize \sf
   fis,8  fis8  fis8  | % 98
-  \set Staff.shortInstrumentName = \markup{\center-column{"Vc." "Cb."}}
+  \tag #'score \set Staff.shortInstrumentName = \markup{\center-column{"Vc." "Cb."}}
+  \tag #'part \set Staff.shortInstrumentName = ""
   R1*5 | % 103
   d'8  \f ^ "Vc. et Cb."  d8  d8
   d8   d2 :8 \p | % 104
   d2 :8  d2 :8 | % 105
   d2 :8  d2 :8 | % 106
   d2 :8  d2 :8 | % 107
-  \override TextSpanner.bound-details.left.text = "cresc."
-  d2 :8  d2 :8 \startTextSpan | % 108
+  d2 :8  d2 :8 _\markup{\italic cresc.} | % 108
   d2 :8  d2 :8 | % 109
   d2 :8  d2 :8 | \barNumberCheck #110
   d2 :8  d2 :8 | % 111
-  d2 :8 \stopTextSpan \ff  d2 :8 | % 112
+  d2 :8 \ff  d2 :8 | % 112
   d2 :8  d2 :8 | % 113
   g2 :8  g2 :8 | % 114
   a2 :8  a,2 :8 | % 115
@@ -2383,6 +2434,8 @@ bassinotesII =  \relative c {
   \break
   R1*30 \bar "|."
 }
+
+\addQuote "hn1" { \hornInotes }
 
 \addQuote "vl1" { \violinInotes }
 \addQuote "vl1," {\transpose c c, \violinInotes }
