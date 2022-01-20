@@ -74,7 +74,7 @@
           \partCombine \keepWithTag #'score \oboeInotes \keepWithTag #'score \oboeIInotes
         }
         \new Staff \with {
-          instrumentName = "Corno inglese 1,2"
+          instrumentName = \markup{\raise #1.5 \center-column{"Corno" "inglese"} "1,2"}
           shortInstrumentName = \markup{"Ci." \raise #1.5 \center-column{"1" "2"}}
         }{
           \partCombine {
@@ -82,7 +82,7 @@
             \transposition f \keepWithTag #'score \transpose f, c \englishhornIInotes }
         }
         \new Staff \with {
-          instrumentName = \markup{\center-column{"Clarinetto 1,2" "in B"}}
+          instrumentName = \markup{\center-column{"Clarinetto 1,2" \concat{"in B" \raise #.5 \teeny{\flat}}}}
           shortInstrumentName = \markup{\center-column{"Cl." "in B"}  \center-column{"1" "2"}}
         }{
          \partCombine {
@@ -108,8 +108,8 @@
             \transposition f \keepWithTag #'score \transpose f, c \hornIInotes }
         }
         \new Staff \with {
-          instrumentName = \markup{\center-column{"Tromba 1,2" "in B"}}
-          shortInstrumentName = \markup{\center-column{"Tr." "in B"}  \center-column{"1" "2"}}
+          instrumentName = \markup{\center-column{"Tromba 1,2" \concat{"in B" \raise #.5 \teeny{\flat}}}}
+          shortInstrumentName = \markup{\center-column{"Tr." \concat{"in B" \raise #.5 \teeny{\flat}}}  \center-column{"1" "2"}}
         }{
           \partCombine {
             \transposition bes \keepWithTag #'score \transpose bes, c \trumpetInotes } {
@@ -165,7 +165,7 @@
 }
 
 \book {
-  \bookOutputName "01a_flute1"
+  \bookOutputName "01a_flauto1"
   \header {
     instrument = "Flauto 1"
   }
@@ -177,7 +177,7 @@
   }
 }
 \book {
-  \bookOutputName "01b_flute2"
+  \bookOutputName "01b_flauto2"
   \header {
     instrument = "Flauto 2"
   }
@@ -216,7 +216,7 @@
   }
 }
 \book {
-  \bookOutputName "02c_cor_anglais1"
+  \bookOutputName "02c_corno_inglese1"
   \header {
     instrument = "Corno inglese 1"
   }
@@ -226,12 +226,41 @@
   \score {
     \new Staff <<
       \keepWithTag #'part \global
-      \compressEmptyMeasures {\transposition f' \keepWithTag #'part \transpose f, c \englishhornInotes}
+      \compressEmptyMeasures {\transposition f' \keepWithTag #'(part treble-clef) \transpose f, c \englishhornInotes}
     >>
   }
 }
 \book {
-  \bookOutputName "02d_cor_anglais2"
+  \bookOutputName "02c_corno_inglese1_substitute"
+  \paper {
+    ragged-last-bottom = ##t
+    print-page-number = ##f
+  }
+  \bookpart {
+    \header {
+      instrument = "Corno inglese 1 sostituto / Oboe"
+    }
+    \score {
+      \new Staff <<
+        \keepWithTag #'part \global
+        \compressEmptyMeasures {\keepWithTag #'(part treble-clef) \transpose c c \englishhornInotes}
+      >>
+    }
+  }
+  \bookpart {
+    \header {
+      instrument = \markup{\concat{"Corno inglese 1 sostituto / Clarinetto in B" \raise #.5 \teeny{\flat}}}
+    }
+    \score {
+      \new Staff <<
+        \keepWithTag #'part \global
+        \compressEmptyMeasures {\transposition bes \keepWithTag #'(part treble-clef) \transpose bes, c \englishhornInotes}
+      >>
+    }
+  }
+}
+\book {
+  \bookOutputName "02d_corno_inglese2"
   \header {
     instrument = "Corno inglese 2"
   }
@@ -241,14 +270,43 @@
   \score {
     \new Staff <<
       \keepWithTag #'part \global
-      \compressEmptyMeasures {\transposition f' \keepWithTag #'part \transpose f, c \englishhornIInotes}
+      \compressEmptyMeasures {\transposition f' \keepWithTag #'(part treble-clef) \transpose f, c \englishhornIInotes}
     >>
   }
 }
 \book {
-  \bookOutputName "03a_clarinet1"
+  \bookOutputName "02d_corno_inglese2_substitute"
+  \paper {
+    ragged-last-bottom = ##t
+    print-page-number = ##f
+  }
+  \bookpart {
+    \header {
+      instrument = "Corno inglese 2 sostituto / Fagotto"
+    }
+    \score {
+      \new Staff <<
+        \keepWithTag #'part \global
+        \compressEmptyMeasures {\keepWithTag #'(part tenor-clef) \transpose c c \englishhornIInotes}
+      >>
+    }
+  }
+  \bookpart {
+    \header {
+      instrument = \markup{\concat{"Corno inglese 2 sostituto / Clarinetto in B" \raise #.5 \teeny{\flat}}}
+    }
+    \score {
+      \new Staff <<
+        \keepWithTag #'part \global
+        \compressEmptyMeasures {\transposition bes \keepWithTag #'(part treble-clef) \transpose bes, c \englishhornIInotes}
+      >>
+    }
+  }
+}
+\book {
+  \bookOutputName "03a_clarinetto1"
   \header {
-    instrument = "Clarinet 1 in Bb"
+    instrument = \markup{\concat{"Clarinetto 1 in B" \raise #.5 \teeny{\flat}}}
   }
   \score {
     \new Staff <<
@@ -259,9 +317,9 @@
 }
 
 \book {
-  \bookOutputName "03a_clarinet2"
+  \bookOutputName "03a_clarinetto2"
   \header {
-    instrument = "Clarinet 2 in Bb"
+    instrument = \markup{\concat{"Clarinetto 2 in B" \raise #.5 \teeny{\flat}}}
   }
   \score {
     \new Staff <<
@@ -272,9 +330,9 @@
 }
 
 \book {
-  \bookOutputName "04a_bassoon1"
+  \bookOutputName "04a_fagotto1"
   \header {
-    instrument = "Bassoon 1"
+    instrument = "Fagotto 1"
   }
   \score {
     \new Staff <<
@@ -284,9 +342,9 @@
   }
 }
 \book {
-  \bookOutputName "04b_bassoon2"
+  \bookOutputName "04b_fagotto2"
   \header {
-    instrument = "Bassoon 2"
+    instrument = "Fagotto 2"
   }
   \score {
     \new Staff <<
@@ -297,9 +355,9 @@
 }
 
 \book {
-  \bookOutputName "05a_horn1"
+  \bookOutputName "05a_corno1"
   \header {
-    instrument = "Horn 1 in F"
+    instrument = "Corno 1 in F"
   }
   \paper {
     ragged-last-bottom = ##t
@@ -312,9 +370,9 @@
   }
 }
 \book {
-  \bookOutputName "05b_horn2"
+  \bookOutputName "05b_corno2"
   \header {
-    instrument = "Horn 2 in F"
+    instrument = "Corno 2 in F"
   }
   \paper {
     ragged-last-bottom = ##t
@@ -327,9 +385,9 @@
   }
 }
 \book {
-  \bookOutputName "06a_trumpet1"
+  \bookOutputName "06a_tromba1"
   \header {
-    instrument = "Trumpet 1 in Bb"
+    instrument = \markup{\concat{"Tromba 1 in B" \raise #.5 \teeny{\flat}}}
   }
   \paper {
     ragged-last-bottom = ##t
@@ -342,9 +400,9 @@
   }
 }
 \book {
-  \bookOutputName "06b_trumpet2"
+  \bookOutputName "06b_tromba2"
   \header {
-    instrument = "Trumpet 2 in Bb"
+    instrument = \markup{\concat{"Tromba 2 in B" \raise #.5 \teeny{\flat}}}
   }
   \paper {
     ragged-last-bottom = ##t
@@ -373,9 +431,9 @@
 }
 
 \book {
-  \bookOutputName "08_violin1"
+  \bookOutputName "08_violino1"
   \header {
-    instrument = "Violin 1"
+    instrument = "Violino 1"
   }
   \paper { 
     first-page-number = #2
@@ -389,9 +447,9 @@
   }
 }
 \book {
-  \bookOutputName "09_violin2"
+  \bookOutputName "09_violino2"
   \header {
-    instrument = "Violin 2"
+    instrument = "Violino 2"
   }
   \paper { 
     first-page-number = #2
@@ -421,7 +479,7 @@
   }
 }
 \book {
-  \bookOutputName "11_celli_bassi"
+  \bookOutputName "11_violoncelli_contrabassi"
   \header {
     instrument = "Violoncello et Contrabasso"
   }

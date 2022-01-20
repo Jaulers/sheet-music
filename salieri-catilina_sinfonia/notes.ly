@@ -1045,7 +1045,9 @@ bassoonIInotes =  \relative d {
 
 
 englishhornInotes =  \transpose c f, \relative e'' {
-  \clef "treble" \time 4/4 \key c \major | % 1
+  \tag #'treble-clef \clef "treble"
+  \tag #'tenor-clef \clef "tenor"
+  \time 4/4 \key c \major | % 1
   R1*33 \bar "||"
   e2.    d4 | % 35
   d8   c8   c4.  d8
@@ -1087,7 +1089,9 @@ englishhornInotes =  \transpose c f, \relative e'' {
 }
 
 englishhornIInotes =  \transpose c f, \relative c'' {
-  \clef "treble" \time 4/4 \key c \major | % 1
+  \tag #'treble-clef \clef "treble"
+  \tag #'tenor-clef \clef "tenor"
+  \time 4/4 \key c \major | % 1
   R1*33 \bar "||"
   c2.    g4 | % 35
   g8   e8   e4.  g8   c8
